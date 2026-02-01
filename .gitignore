@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+*.egg
+
+# Uploads directory (keep structure but not files)
+uploads/*
+!uploads/.gitkeep
+
+# Electron
+electron/node_modules/
+electron/dist/
+*.AppImage
+*.deb
+*.exe
+*.dmg
+*.snap
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+*.spec
+
+# Logs
+*.log
+
+# Local config
+.env
+config.local.py

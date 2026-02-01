@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=File Sharer
+Comment=Share files across your local network
+Exec=/home/%YOUR_USERNAME%/file-sharer/file-sharer.AppImage
+Icon=/home/%YOUR_USERNAME%/file-sharer/electron/icon.png
+Terminal=false
+Categories=Utility;Network;FileTransfer;
+StartupNotify=true

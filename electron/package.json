@@ -1,0 +1,56 @@
+{
+  "name": "file-sharer",
+  "version": "1.0.0",
+  "description": "Local network file sharing application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:appimage": "electron-builder --linux AppImage",
+    "build:deb": "electron-builder --linux deb",
+    "build:all": "electron-builder --linux --win"
+  },
+  "keywords": [
+    "file-sharing",
+    "local-network"
+  ],
+  "author": "Edi Asllani",
+  "license": "MIT",
+  "build": {
+    "appId": "com.filesharer.app",
+    "productName": "File Sharer",
+    "files": [
+      "main.js",
+      "../backend/**/*",
+      "../frontend/**/*",
+      "../uploads/.gitkeep",
+      "!../venv/**/*",
+      "!../.git/**/*",
+      "!../node_modules/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility",
+      "icon": "icon.png"
+    },
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}

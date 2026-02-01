@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server Error - File Sharer</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f8fafc;
+      }
+      .error-container {
+        text-align: center;
+        padding: 40px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+      }
+      h1 {
+        color: #ef5454;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+      .icon {
+        font-size: 64px;
+        margin-bottom: 20px;
+      }
+      button {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background: #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-container">
+      <div class="icon">⚠️</div>
+      <h1>Cannot Connect to Server</h1>
+      <p>File-Sharer backend server failed to start or is not responding.</p>
+      <p style="font-size: 14px">
+        <strong>Possible solutions:</strong><br />
+        • Make sure Python 3 is installed<br />
+        • Check that port 8000 is available<br />
+        • Verify all dependencies are installed
+      </p>
+      <button onclick="location.reload()">Retry Connection</button>
+      <button onclick="require('electron').remote.app.quit()">Close App</button>
+    </div>
+  </body>
+</html>

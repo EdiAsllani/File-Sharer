@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Sharer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>📁 File Sharer</h1>
+        <p class="subtitle">Share files across your local network</p>
+      </header>
+
+      <!-- Server Status -->
+      <div class="status-bar">
+        <span id="status-indicator" class="status-indicator offline">●</span>
+        <span id="status-text">Connecting to server...</span>
+        <span class="device-name" id="device-name"></span>
+      </div>
+
+      <!-- Main Upload Section -->
+      <section class="upload-section">
+        <h2>Send Files</h2>
+
+        <!-- File Input -->
+        <div class="file-input-wrapper">
+          <input type="file" id="file-input" multiple style="display: none" />
+          <button
+            class="btn btn-primary"
+            onclick="document.getElementById('file-input').click()"
+          >
+            Choose Files
+          </button>
+          <span id="file-count" class="file-count"></span>
+        </div>
+
+        <!-- Selected Files Preview -->
+        <div id="selected-files" class="selected-files"></div>
+
+        <!-- Device Selection -->
+        <div class="device-selection">
+          <label for="target-device">Send to:</label>
+          <select id="target-device" class="device-select">
+            <option value="">Select a device...</option>
+          </select>
+          <button class="btn btn-refresh" onclick="refreshDevices()">🔄</button>
+        </div>
+
+        <!-- Upload Button -->
+        <button
+          id="upload-btn"
+          class="btn btn-success btn-large"
+          onclick="uploadFiles()"
+          disabled
+        >
+          Send Files
+        </button>
+
+        <!-- Progress Bar -->
+        <div
+          id="progress-container"
+          class="progress-container"
+          style="display: none"
+        >
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <span id="progress-text" class="progress-text">0%</span>
+        </div>
+      </section>
+
+      <!-- Available Files Section -->
+      <section class="files-section">
+        <div class="section-header">
+          <h2>Available Files</h2>
+          <button class="btn btn-small" onclick="refreshFiles()">
+            Refresh
+          </button>
+        </div>
+        <div id="files-list" class="files-list">
+          <p class="empty-state">No files available</p>
+        </div>
+      </section>
+
+      <!-- Notifications -->
+      <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
